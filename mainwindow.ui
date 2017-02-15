@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout_6">
+   <layout class="QVBoxLayout" name="verticalLayout_11">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
@@ -29,7 +29,7 @@
         <item alignment="Qt::AlignHCenter">
          <widget class="QLabel" name="label">
           <property name="text">
-           <string>&lt;200Hz</string>
+           <string>f0</string>
           </property>
          </widget>
         </item>
@@ -47,7 +47,7 @@
         <item alignment="Qt::AlignHCenter">
          <widget class="QLabel" name="label_2">
           <property name="text">
-           <string>200-1000Hz</string>
+           <string>f1</string>
           </property>
          </widget>
         </item>
@@ -65,7 +65,7 @@
         <item alignment="Qt::AlignHCenter">
          <widget class="QLabel" name="label_3">
           <property name="text">
-           <string>1000-5000Hz</string>
+           <string>f2</string>
           </property>
          </widget>
         </item>
@@ -83,7 +83,7 @@
         <item alignment="Qt::AlignHCenter">
          <widget class="QLabel" name="label_4">
           <property name="text">
-           <string>5000-25000Hz</string>
+           <string>f3</string>
           </property>
          </widget>
         </item>
@@ -101,7 +101,97 @@
         <item alignment="Qt::AlignHCenter">
          <widget class="QLabel" name="label_5">
           <property name="text">
-           <string>&gt;25000Hz</string>
+           <string>f4</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QSlider" name="verticalSlider_6">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>f5</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QSlider" name="verticalSlider_7">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>f6</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QSlider" name="verticalSlider_8">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>f7</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QSlider" name="verticalSlider_9">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>f8</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QSlider" name="verticalSlider_10">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>f9</string>
           </property>
          </widget>
         </item>
@@ -112,11 +202,17 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QCheckBox" name="checkBox">
+       <widget class="QCheckBox" name="delay_checkBox">
         <property name="minimumSize">
          <size>
-          <width>64</width>
+          <width>80</width>
           <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="text">
@@ -125,9 +221,21 @@
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="checkBox_2">
+       <widget class="QCheckBox" name="echo_checkBox">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="text">
-         <string>echo</string>
+         <string>vibrato</string>
         </property>
        </widget>
       </item>
@@ -145,9 +253,16 @@
        </spacer>
       </item>
       <item alignment="Qt::AlignHCenter">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="openButton">
         <property name="text">
          <string>Open music for equalizing</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="playButton">
+        <property name="text">
+         <string>Play the opened track</string>
         </property>
        </widget>
       </item>
