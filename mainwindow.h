@@ -1,8 +1,9 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
 #include <QFileDialog>
+#include <QMediaPlayer>
 #include <QAudioDecoder>
 #include <QAudioFormat>
 #include <QAudioOutput>
@@ -45,20 +46,12 @@ private slots:
 
     void on_verticalSlider_10_sliderMoved(int position);
 
-    void readBuffer();
-
 private:
+
     Ui::MainWindow *ui;
 
     QString currentFileName;
 
-    QAudioDecoder *decoder;
-
-    QIODevice *device;
-
-    QAudioOutput *output;
-
-    QByteArray *bytes;
 };
 
 #endif // MAINWINDOW_H

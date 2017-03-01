@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -13,38 +13,19 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+// decodes the file into memory
 void MainWindow::on_openButton_clicked()
 {
     QString currentFileName = QFileDialog::getOpenFileName(this, tr("Open Audio"), "/home", tr("Audio Files (*.wav *.mp3 *.ogg)"));
 
-    QAudioFormat desiredFormat;
-    desiredFormat.setChannelCount(2);
-    desiredFormat.setCodec("audio/pcm");
-    desiredFormat.setSampleType(QAudioFormat::UnSignedInt);
-    desiredFormat.setSampleRate(44100);
-    desiredFormat.setSampleSize(16);
-
-    this->output = new QAudioOutput(desiredFormat, this);
-    this->device = this->output->start();
-
-    this->decoder = new QAudioDecoder(this);
-    this->decoder->setAudioFormat(desiredFormat);
-    this->decoder->setSourceFilename(currentFileName);
-
-    connect(this->decoder, SIGNAL(bufferReady()), this, SLOT(readBuffer()));
-    this->decoder->start();
+    //load the file if need be
 
     ui->statusBar->showMessage("File " + currentFileName + " is loaded", 3000);
 }
 
-void MainWindow::readBuffer() {
-    //here we put the logic to execute when we read a chunk of data
-}
-
-
 void MainWindow::on_playButton_clicked()
 {
-
+    // play the file
 }
 
 void MainWindow::on_verticalSlider_sliderMoved(int position)
