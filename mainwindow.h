@@ -8,9 +8,10 @@
 #include <QAudioFormat>
 #include <QAudioOutput>
 #include <QQueue>
+#include "equalizer.h"
 
 namespace Ui {
-class MainWindow;
+    class MainWindow;
 }
 
 class MainWindow : public QMainWindow
@@ -51,6 +52,10 @@ private:
     Ui::MainWindow *ui;
 
     QString currentFileName;
+
+    double coeffs[10];
+
+    EqualizerStream eq;
 
 };
 
