@@ -47,6 +47,8 @@ private slots:
 
     void on_verticalSlider_10_sliderMoved(int position);
 
+    void on_stopButton_clicked();
+
 private:
 
     Ui::MainWindow *ui;

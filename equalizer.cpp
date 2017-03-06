@@ -8,6 +8,7 @@ void EqualizerStream::streamFromFile(const std::string &filename)
 }
 
 std::string EqualizerStream::setTenEqualizerCoeffs(double coeff1, double coeff2, double coeff3, double coeff4, double coeff5, double coeff6, double coeff7, double coeff8, double coeff9, double coeff10) {
+    coefficients.clear();
     coefficients.push_back(coeff1);
     coefficients.push_back(coeff2);
     coefficients.push_back(coeff3);
@@ -20,16 +21,16 @@ std::string EqualizerStream::setTenEqualizerCoeffs(double coeff1, double coeff2,
     coefficients.push_back(coeff10);
     prepareWeightCoeffs();
     return "All coeffs successfully set to " +
-        to_string(coeff1) + ", " +
-        to_string(coeff2) + ", " +
-        to_string(coeff3) + ", " +
-        to_string(coeff4) + ", " +
-        to_string(coeff5) + ", " +
-        to_string(coeff6) + ", " +
-        to_string(coeff7) + ", " +
-        to_string(coeff8) + ", " +
-        to_string(coeff9) + ", " +
-        to_string(coeff10) + "!";
+        std::to_string(coeff1) + ", " +
+        std::to_string(coeff2) + ", " +
+        std::to_string(coeff3) + ", " +
+        std::to_string(coeff4) + ", " +
+        std::to_string(coeff5) + ", " +
+        std::to_string(coeff6) + ", " +
+        std::to_string(coeff7) + ", " +
+        std::to_string(coeff8) + ", " +
+        std::to_string(coeff9) + ", " +
+        std::to_string(coeff10) + "!";
 }
 
 void EqualizerStream::load(const sf::SoundBuffer& buffer)
@@ -44,7 +45,7 @@ void EqualizerStream::load(const sf::SoundBuffer& buffer)
     initialize(buffer.getChannelCount(), buffer.getSampleRate());
 }
 
-virtual bool EqualizerStream::onGetData(Chunk& data)
+bool EqualizerStream::onGetData(Chunk& data)
 {
     // number of samples to stream every time the function is called;
     // in a more robust implementation, it should be a fixed
@@ -90,7 +91,7 @@ virtual bool EqualizerStream::onGetData(Chunk& data)
     }
 }
 
-virtual void EqualizerStream::onSeek(sf::Time timeOffset)
+void EqualizerStream::onSeek(sf::Time timeOffset)
 {
     // compute the corresponding sample index according to the sample rate and channel count
     m_currentSample = static_cast<std::size_t>(timeOffset.asSeconds() * getSampleRate() * getChannelCount());
@@ -118,10 +119,10 @@ void EqualizerStream::prepareWeightCoeffs() {
             }
         }
     }
-    for (size_t i = 0; i < f_discr; i++) {
-        weightCoeffs[i] = weightCoeffs[i] / delimiters[i];
-        if (weightCoeffs[i] != 1) {
-            std::cout << weightCoeffs[i] << ", ";
-        }
-    }
+//    for (size_t i = 0; i < f_discr; i++) {
+//        weightCoeffs[i] = weightCoeffs[i] / delimiters[i];
+//        if (weightCoeffs[i] != 1) {
+//            std::cout << weightCoeffs[i] << ", ";
+//        }
+//    }
 }

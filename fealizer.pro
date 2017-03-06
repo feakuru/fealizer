@@ -31,3 +31,5 @@ HEADERS  += mainwindow.h \
     equalizer.h
 
 FORMS    += mainwindow.ui
+
+LIBS += -lsfml-audio -lsfml-system
