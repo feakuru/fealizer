@@ -38,7 +38,6 @@ void MainWindow::on_playButton_clicked()
 {
     // set eq
     ui->statusBar->showMessage("Please wait, we are preparing the equalization...");
-    std::cout << eq.setTenEqualizerCoeffs(coeffs[0], coeffs[1], coeffs[2], coeffs[3], coeffs[4], coeffs[5], coeffs[6], coeffs[7], coeffs[8], coeffs[9]) << std::endl;
     ui->statusBar->clearMessage();
     // play the file
     eq.play();

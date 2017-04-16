@@ -7,6 +7,7 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
+#include "filter.cpp"
 
 //template < typename T > std::string std::to_string( const T& n )
 //{
@@ -22,9 +23,9 @@ class EqualizerStream : public sf::SoundStream
 {
 public:
 
-    void streamFromFile(const std::string &filename);
+    EqualizerStream(const char* filename);
 
-    std::string setTenEqualizerCoeffs(double coeff1, double coeff2, double coeff3, double coeff4, double coeff5, double coeff6, double coeff7, double coeff8, double coeff9, double coeff10);
+    void streamFromFile(const std::string &filename);
 
 private:
 
@@ -34,17 +35,17 @@ private:
 
     virtual void onSeek(sf::Time timeOffset);
 
-    void prepareWeightCoeffs();
-
     std::vector<sf::Int16> m_samples;
 
-    float* weightCoeffs;
+    // float* weightCoeffs;
 
     std::size_t m_currentSample;
 
     sf::SoundBuffer buffer;
 
     std::vector<double> coefficients;
+
+    IIRFilterFromMatlab* filter;
 };
 
 #endif // EQUALIZER_H
