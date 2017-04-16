@@ -25,7 +25,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    equalizer.cpp
+    equalizer.cpp \
+    filter.cpp
 
 HEADERS  += mainwindow.h \
     equalizer.h
