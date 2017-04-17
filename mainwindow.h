@@ -57,7 +57,7 @@ private:
 
     double coeffs[10];
 
-    EqualizerStream eq;
+    FilteredStream eq;
 
 };
 

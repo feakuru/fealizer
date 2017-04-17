@@ -19,11 +19,11 @@
 
 
 // custom audio stream that plays a loaded buffer
-class EqualizerStream : public sf::SoundStream
+class FilteredStream : public sf::SoundStream
 {
 public:
 
-    EqualizerStream(const char* filename);
+    FilteredStream(const char* filename = "../fealizer/f_test.fcf");
 
     void streamFromFile(const std::string &filename);
 

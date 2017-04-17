@@ -33,4 +33,10 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui
 
-LIBS += -lsfml-audio -lsfml-system
+win32 {
+
+}
+
+linux-g++ {
+    LIBS += -lsfml-audio -lsfml-system
+}
