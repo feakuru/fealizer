@@ -2,7 +2,7 @@
 
 FilteredStream::FilteredStream() {
     for (int it = 0; it < 10; it++)
-        filters[it] = new FIRFilterFromCP(1,
+        filters[it] = new FIRFilterFromCP(10,
                                           44.1,
                                           22.05 / pow(2, it),
                                           22.05 / pow(2, it + 1));
@@ -55,7 +55,12 @@ bool FilteredStream::onGetData(Chunk& data)
     for (int it = 1; it < 10; it++) {
         filtered_samples = filters[it]->filter(new_samples, realSize, this->coeffs[it]);
         for (size_t iter = 0; iter < realSize; iter++) {
-            ultra_new_samples[iter] += filtered_samples[iter];
+            if ((filtered_samples[iter] > 0) ?
+                 (ultra_new_samples[iter] + filtered_samples[iter] > ultra_new_samples[iter])
+               : (ultra_new_samples[iter] + filtered_samples[iter] < ultra_new_samples[iter])
+                    ) {
+                ultra_new_samples[iter] += filtered_samples[iter];
+            }
         }
     }
 

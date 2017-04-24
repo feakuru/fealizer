@@ -20,6 +20,12 @@
       <item alignment="Qt::AlignHCenter">
        <widget class="QSlider" name="verticalSlider">
         <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
+        </property>
+        <property name="singleStep">
          <number>1</number>
         </property>
         <property name="orientation">
@@ -35,7 +41,7 @@
          <enum>QSlider::TicksBothSides</enum>
         </property>
         <property name="tickInterval">
-         <number>10</number>
+         <number>1</number>
         </property>
        </widget>
       </item>
@@ -53,7 +59,10 @@
       <item alignment="Qt::AlignHCenter">
        <widget class="QSlider" name="verticalSlider_2">
         <property name="minimum">
-         <number>1</number>
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
         </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -62,7 +71,7 @@
          <enum>QSlider::TicksBothSides</enum>
         </property>
         <property name="tickInterval">
-         <number>10</number>
+         <number>1</number>
         </property>
        </widget>
       </item>
@@ -80,7 +89,10 @@
       <item alignment="Qt::AlignHCenter">
        <widget class="QSlider" name="verticalSlider_3">
         <property name="minimum">
-         <number>1</number>
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
         </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -89,7 +101,7 @@
          <enum>QSlider::TicksBothSides</enum>
         </property>
         <property name="tickInterval">
-         <number>10</number>
+         <number>1</number>
         </property>
        </widget>
       </item>
@@ -107,7 +119,10 @@
       <item alignment="Qt::AlignHCenter">
        <widget class="QSlider" name="verticalSlider_4">
         <property name="minimum">
-         <number>1</number>
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
         </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -116,7 +131,7 @@
          <enum>QSlider::TicksBothSides</enum>
         </property>
         <property name="tickInterval">
-         <number>10</number>
+         <number>1</number>
         </property>
        </widget>
       </item>
@@ -134,7 +149,10 @@
       <item alignment="Qt::AlignHCenter">
        <widget class="QSlider" name="verticalSlider_5">
         <property name="minimum">
-         <number>1</number>
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
         </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -143,7 +161,7 @@
          <enum>QSlider::TicksBothSides</enum>
         </property>
         <property name="tickInterval">
-         <number>10</number>
+         <number>1</number>
         </property>
        </widget>
       </item>
@@ -161,7 +179,10 @@
       <item alignment="Qt::AlignHCenter">
        <widget class="QSlider" name="verticalSlider_6">
         <property name="minimum">
-         <number>1</number>
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
         </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -170,7 +191,7 @@
          <enum>QSlider::TicksBothSides</enum>
         </property>
         <property name="tickInterval">
-         <number>10</number>
+         <number>1</number>
         </property>
        </widget>
       </item>
@@ -188,7 +209,10 @@
       <item alignment="Qt::AlignHCenter">
        <widget class="QSlider" name="verticalSlider_7">
         <property name="minimum">
-         <number>1</number>
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
         </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -197,7 +221,7 @@
          <enum>QSlider::TicksBothSides</enum>
         </property>
         <property name="tickInterval">
-         <number>10</number>
+         <number>1</number>
         </property>
        </widget>
       </item>
@@ -215,7 +239,10 @@
       <item alignment="Qt::AlignHCenter">
        <widget class="QSlider" name="verticalSlider_8">
         <property name="minimum">
-         <number>1</number>
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
         </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -224,7 +251,7 @@
          <enum>QSlider::TicksBothSides</enum>
         </property>
         <property name="tickInterval">
-         <number>10</number>
+         <number>1</number>
         </property>
        </widget>
       </item>
@@ -242,7 +269,10 @@
       <item alignment="Qt::AlignHCenter">
        <widget class="QSlider" name="verticalSlider_9">
         <property name="minimum">
-         <number>1</number>
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
         </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -251,7 +281,7 @@
          <enum>QSlider::TicksBothSides</enum>
         </property>
         <property name="tickInterval">
-         <number>10</number>
+         <number>1</number>
         </property>
        </widget>
       </item>
@@ -269,7 +299,10 @@
       <item alignment="Qt::AlignHCenter">
        <widget class="QSlider" name="verticalSlider_10">
         <property name="minimum">
-         <number>1</number>
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
         </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -278,7 +311,7 @@
          <enum>QSlider::TicksBothSides</enum>
         </property>
         <property name="tickInterval">
-         <number>10</number>
+         <number>1</number>
         </property>
        </widget>
       </item>
@@ -378,10 +411,173 @@
      </layout>
     </item>
    </layout>
+   <zorder></zorder>
+   <zorder>label_3</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>verticalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>29</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>29</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalSlider_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_2</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>77</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalSlider_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_3</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>124</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalSlider_4</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_4</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>172</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>172</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalSlider_5</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_5</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>220</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>220</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalSlider_6</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_6</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>267</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>267</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalSlider_7</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_7</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>315</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>315</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalSlider_8</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_8</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>363</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>363</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalSlider_9</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_9</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>411</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>411</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalSlider_10</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_10</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>458</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>458</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

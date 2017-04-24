@@ -49,6 +49,8 @@ private slots:
 
     void on_stopButton_clicked();
 
+    void on_verticalSlider_valueChanged(int value);
+
 private:
 
     Ui::MainWindow *ui;
