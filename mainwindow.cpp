@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     coeffs[7] = 0.1;
     coeffs[8] = 0.1;
     coeffs[9] = 0.1;
+    eq.setCoeffs(coeffs);
 }
 
 MainWindow::~MainWindow()

@@ -1,7 +1,15 @@
 ﻿#include "equalizer.h"
 
-FilteredStream::FilteredStream(const char* filename) {
-    filter = new IIRFilterFromMatlab(filename);
+FilteredStream::FilteredStream() {
+    for (int it = 0; it < 10; it++)
+        filters[it] = new FIRFilterFromCP(1,
+                                          44.1,
+                                          22.05 / pow(2, it),
+                                          22.05 / pow(2, it + 1));
+}
+
+void FilteredStream::setCoeffs(double* coeffs) {
+    this->coeffs = coeffs;
 }
 
 void FilteredStream::streamFromFile(const std::string &filename)
@@ -28,7 +36,7 @@ bool FilteredStream::onGetData(Chunk& data)
     // number of samples to stream every time the function is called;
     // in a more robust implementation, it should be a fixed
     // amount of time rather than an arbitrary number of samples
-    const int samplesToStream = buffer.getSampleRate();
+    const size_t samplesToStream = buffer.getSampleRate();
     size_t realSize = 0;
     sf::Int16* new_samples = new sf::Int16[samplesToStream];
 
@@ -37,12 +45,19 @@ bool FilteredStream::onGetData(Chunk& data)
         try {
             new_samples[sample_num] = m_samples.at(m_currentSample + sample_num);
         }
-        catch (std::out_of_range& e) {
+        catch (std::out_of_range&) {
             break;
         }
     }
 
-    sf::Int16* ultra_new_samples = filter->filter(new_samples, realSize);
+    sf::Int16* ultra_new_samples = filters[0]->filter(new_samples, realSize, this->coeffs[0]);
+    sf::Int16* filtered_samples;
+    for (int it = 1; it < 10; it++) {
+        filtered_samples = filters[it]->filter(new_samples, realSize, this->coeffs[it]);
+        for (size_t iter = 0; iter < realSize; iter++) {
+            ultra_new_samples[iter] += filtered_samples[iter];
+        }
+    }
 
     delete data.samples;
     delete new_samples;

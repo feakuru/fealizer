@@ -23,9 +23,11 @@ class FilteredStream : public sf::SoundStream
 {
 public:
 
-    FilteredStream(const char* filename = "../fealizer/f_test.fcf");
+    FilteredStream();
 
     void streamFromFile(const std::string &filename);
+
+    void setCoeffs(double* coeffs);
 
 private:
 
@@ -45,7 +47,9 @@ private:
 
     std::vector<double> coefficients;
 
-    IIRFilterFromMatlab* filter;
+    FIRFilterFromCP* filters[10];
+
+    double* coeffs;
 };
 
 #endif // EQUALIZER_H

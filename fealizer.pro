@@ -26,10 +26,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     equalizer.cpp \
-    filter.cpp
+    filter.cpp \
+    FIR/filt.cpp
 
 HEADERS  += mainwindow.h \
-    equalizer.h
+    equalizer.h \
+    FIR/filt.h
 
 FORMS    += mainwindow.ui
 
