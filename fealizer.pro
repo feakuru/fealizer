@@ -27,11 +27,11 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     equalizer.cpp \
     filter.cpp \
-    FIR/filt.cpp
+    feafilter/filt.cpp
 
 HEADERS  += mainwindow.h \
     equalizer.h \
-    FIR/filt.h
+    feafilter/filt.h
 
 FORMS    += mainwindow.ui
 

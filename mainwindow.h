@@ -51,6 +51,8 @@ private slots:
 
     void on_verticalSlider_valueChanged(int value);
 
+    void on_verticalSlider_10_valueChanged(int value);
+
 private:
 
     Ui::MainWindow *ui;

@@ -2,10 +2,7 @@
 
 FilteredStream::FilteredStream() {
     for (int it = 0; it < 10; it++)
-        filters[it] = new FIRFilterFromCP(10,
-                                          44.1,
-                                          22.05 / pow(2, it),
-                                          22.05 / pow(2, it + 1));
+        filters[it] = new FIRFilterFromCP(it);
 }
 
 void FilteredStream::setCoeffs(double* coeffs) {
