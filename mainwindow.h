@@ -3,11 +3,7 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
-#include <QMediaPlayer>
-#include <QAudioDecoder>
-#include <QAudioFormat>
-#include <QAudioOutput>
-#include <QQueue>
+#include <QTimer>
 #include "equalizer.h"
 
 namespace Ui {

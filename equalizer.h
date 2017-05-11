@@ -2,11 +2,6 @@
 #define EQUALIZER_H
 
 #include <SFML/Audio.hpp>
-#include <vector>
-#include <string>
-#include <iostream>
-#include <sstream>
-#include <cmath>
 #include "filter.cpp"
 
 //template < typename T > std::string std::to_string( const T& n )
@@ -32,6 +27,8 @@ public:
     bool delay_enabled;
 
     bool vibrato_enabled;
+
+    sf::Int16 average_values[10];
 
 private:
 

@@ -37,6 +37,30 @@ void MainWindow::on_openButton_clicked()
 
 void MainWindow::on_playButton_clicked()
 {
+    QTimer* timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, [&]{
+        ui->oldIndicator->setValue(eq.average_values[0]);
+        ui->oldIndicator_2->setValue(eq.average_values[1]);
+        ui->oldIndicator_3->setValue(eq.average_values[2]);
+        ui->oldIndicator_4->setValue(eq.average_values[3]);
+        ui->oldIndicator_5->setValue(eq.average_values[4]);
+        ui->oldIndicator_6->setValue(eq.average_values[5]);
+        ui->oldIndicator_7->setValue(eq.average_values[6]);
+        ui->oldIndicator_8->setValue(eq.average_values[7]);
+        ui->oldIndicator_9->setValue(eq.average_values[8]);
+        ui->oldIndicator_10->setValue(eq.average_values[9]);
+        ui->newIndicator->setValue(((unsigned short)eq.average_values[0] + 32767) * coeffs[0] - 32767);
+        ui->newIndicator_2->setValue(((unsigned short)eq.average_values[1] + 32767) * coeffs[1] - 32767);
+        ui->newIndicator_3->setValue(((unsigned short)eq.average_values[2] + 32767) * coeffs[2] - 32767);
+        ui->newIndicator_4->setValue(((unsigned short)eq.average_values[3] + 32767) * coeffs[3] - 32767);
+        ui->newIndicator_5->setValue(((unsigned short)eq.average_values[4] + 32767) * coeffs[4] - 32767);
+        ui->newIndicator_6->setValue(((unsigned short)eq.average_values[5] + 32767) * coeffs[5] - 32767);
+        ui->newIndicator_7->setValue(((unsigned short)eq.average_values[6] + 32767) * coeffs[6] - 32767);
+        ui->newIndicator_8->setValue(((unsigned short)eq.average_values[7] + 32767) * coeffs[7] - 32767);
+        ui->newIndicator_9->setValue(((unsigned short)eq.average_values[8] + 32767) * coeffs[8] - 32767);
+        ui->newIndicator_10->setValue(((unsigned short)eq.average_values[9] + 32767) * coeffs[9] - 32767);
+    });
+    timer->start();
     // play the file
     eq.play();
     ui->playButton->setEnabled(false);

@@ -3,6 +3,8 @@
 FilteredStream::FilteredStream() {
     for (int it = 0; it < 10; it++)
         filters[it] = new FIRFilterFromCP(it);
+    delay_enabled = false;
+    vibrato_enabled = false;
 }
 
 void FilteredStream::setCoeffs(double* coeffs) {
@@ -47,10 +49,10 @@ bool FilteredStream::onGetData(Chunk& data)
         }
     }
 
-    sf::Int16* ultra_new_samples = filters[0]->filter(new_samples, realSize, this->coeffs[0]);
+    sf::Int16* ultra_new_samples = filters[0]->filter(new_samples, realSize, this->coeffs[0], average_values);
     sf::Int16* filtered_samples;
     for (int it = 1; it < 10; it++) {
-        filtered_samples = filters[it]->filter(new_samples, realSize, this->coeffs[it]);
+        filtered_samples = filters[it]->filter(new_samples, realSize, this->coeffs[it], average_values + it);
         for (size_t iter = 0; iter < realSize; iter++) {
             if ((filtered_samples[iter] > 0) ?
                  (ultra_new_samples[iter] + filtered_samples[iter] > ultra_new_samples[iter])
