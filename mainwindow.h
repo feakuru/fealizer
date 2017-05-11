@@ -49,9 +49,9 @@ private slots:
 
     void on_stopButton_clicked();
 
-    void on_verticalSlider_valueChanged(int value);
+    void on_delay_checkBox_toggled(bool checked);
 
-    void on_verticalSlider_10_valueChanged(int value);
+    void on_vibrato_checkBox_toggled(bool checked);
 
 private:
 

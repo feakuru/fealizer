@@ -29,6 +29,10 @@ public:
 
     void setCoeffs(double* coeffs);
 
+    bool delay_enabled;
+
+    bool vibrato_enabled;
+
 private:
 
     void load(const sf::SoundBuffer& buffer);
@@ -38,8 +42,6 @@ private:
     virtual void onSeek(sf::Time timeOffset);
 
     std::vector<sf::Int16> m_samples;
-
-    // float* weightCoeffs;
 
     std::size_t m_currentSample;
 

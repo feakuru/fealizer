@@ -2,8 +2,11 @@
 
 Filter::Filter(int number)
 {
-    double b_lens[] = {30, 30};
-    b_len = b_lens[number];
+    b_len = sizeof(B_ARRAYS[number])/sizeof(B_ARRAYS[number][0]);
+    b = new double[b_len];
+    for (int i = 0; i < b_len; i++) {
+        b[i] = B_ARRAYS[number][i];
+    }
     x = new double[44100];
     cur_x = 0;
 }

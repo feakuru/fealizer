@@ -353,7 +353,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="echo_checkBox">
+       <widget class="QCheckBox" name="vibrato_checkBox">
         <property name="minimumSize">
          <size>
           <width>80</width>
@@ -412,7 +412,6 @@
     </item>
    </layout>
    <zorder></zorder>
-   <zorder>label_3</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>

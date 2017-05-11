@@ -1,9 +1,4 @@
 ﻿#include <SFML/Audio.hpp>
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
-#include <stdexcept>
 #include <feafilter/filt.h>
 
 class FIRFilterFromCP {

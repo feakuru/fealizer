@@ -61,6 +61,23 @@ bool FilteredStream::onGetData(Chunk& data)
         }
     }
 
+    if (this->delay_enabled) {
+        for (size_t iter = 8000; iter < realSize; iter++) {
+            ultra_new_samples[iter] += ultra_new_samples[iter - 200] * 0.7;
+        }
+    }
+
+    if (this->vibrato_enabled) {
+        int step = 20000;
+        int half_step = step / 2;
+        for (size_t iter = 0; iter < realSize; iter++) {
+            if (ultra_new_samples[iter] % step < half_step)
+                ultra_new_samples[iter] *= (iter % step) / half_step;
+            else
+                ultra_new_samples[iter] *= (step - (iter % step)) / half_step;
+        }
+    }
+
     delete data.samples;
     delete new_samples;
     data.samples = ultra_new_samples;

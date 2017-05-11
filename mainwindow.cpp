@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setWindowTitle("FeaLizer 0.1beta");
+    setWindowTitle("FeaLizer 0.2beta");
     coeffs[0] = 0;
     coeffs[1] = 0;
     coeffs[2] = 0;
@@ -53,6 +53,8 @@ void MainWindow::on_stopButton_clicked()
 void MainWindow::on_verticalSlider_sliderMoved(int position)
 {
     coeffs[0] = (position) / 10.0;
+    if (coeffs[0] == 0)
+        coeffs[0] = 0.01; // this fixes the strange filter behavior
 }
 
 void MainWindow::on_verticalSlider_2_sliderMoved(int position)
@@ -67,7 +69,7 @@ void MainWindow::on_verticalSlider_3_sliderMoved(int position)
 
 void MainWindow::on_verticalSlider_4_sliderMoved(int position)
 {
-    coeffs[3] = (position) / 100.0;
+    coeffs[3] = (position) / 10.0;
 }
 
 void MainWindow::on_verticalSlider_5_sliderMoved(int position)
@@ -100,12 +102,12 @@ void MainWindow::on_verticalSlider_10_sliderMoved(int position)
     coeffs[9] = (position) / 10.0;
 }
 
-void MainWindow::on_verticalSlider_10_valueChanged(int value)
+void MainWindow::on_delay_checkBox_toggled(bool checked)
 {
-
+    this->eq.delay_enabled = checked;
 }
 
-void MainWindow::on_verticalSlider_valueChanged(int value)
+void MainWindow::on_vibrato_checkBox_toggled(bool checked)
 {
-
+    this->eq.vibrato_enabled = checked;
 }
