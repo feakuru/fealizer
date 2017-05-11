@@ -21,9 +21,9 @@ double Filter::do_sample(double data_sample) {
     x[cur_x++] = data_sample;
     for (int iter = 1; iter < b_len; iter++) {
         if (iter > cur_x)
-            retval += b[iter] * x[cur_x - iter];
-        else
             retval += b[iter] * x[44100 - iter];
+        else
+            retval += b[iter] * x[cur_x - iter];
     }
     return retval;
 }

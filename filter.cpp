@@ -8,15 +8,13 @@
 
 class FIRFilterFromCP {
 private:
-        std::vector<double> num;
-        int numa;
-        std::vector<double> denom;
+        int num;
         Filter *my_filter;
 
 public:
         FIRFilterFromCP (int num) {
-            this->numa = num;
-            my_filter = new Filter(1);
+            this->num = num;
+            my_filter = new Filter(num);
         }
 
         sf::Int16* filter(sf::Int16* to_filter, size_t size, double coeff) {

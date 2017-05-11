@@ -102,10 +102,10 @@ void MainWindow::on_verticalSlider_10_sliderMoved(int position)
 
 void MainWindow::on_verticalSlider_10_valueChanged(int value)
 {
-    value;
+
 }
 
 void MainWindow::on_verticalSlider_valueChanged(int value)
 {
-    value;
+
 }
