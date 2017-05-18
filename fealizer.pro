@@ -36,7 +36,8 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui
 
 win32 {
-
+    INCLUDEPATH += $$PWD/SFML/include
+    LIBS += -L"$$PWD/SFML/lib" -lsfml-audio-d -lsfml-system-d -lsfml-window-d -lsfml-graphics-d
 }
 
 linux-g++ {
